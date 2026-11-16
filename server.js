@@ -137,8 +137,11 @@ app.use((err, req, res, next) => {
 
 // Start server
 
-const PORT = 6500;
+ 
+// Start server
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+const PORT = process.env.PORT || 6500;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
